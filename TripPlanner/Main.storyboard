@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aqh-yu-h17">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Planned Trips-->
+        <scene sceneID="mmL-Vn-CGf">
+            <objects>
+                <tableViewController id="sHv-6X-9b8" customClass="ShowTripsTableViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Lzl-D9-B6D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="huX-kB-d1V">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="huX-kB-d1V" id="AlK-ZI-adR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sHv-6X-9b8" id="ARQ-kC-vn8"/>
+                            <outlet property="delegate" destination="sHv-6X-9b8" id="Dvf-ij-2J3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Planned Trips" id="CR3-xk-24H">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dWf-YI-Ikv">
+                            <connections>
+                                <action selector="addPlannedTripsBTN:" destination="sHv-6X-9b8" id="iQ9-U6-13G"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hVs-cF-8gw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-52.173913043478265" y="-2192.4107142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zL0-gU-f7J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aqh-yu-h17" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rtu-rK-OWF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sHv-6X-9b8" kind="relationship" relationship="rootViewController" id="G0W-1S-5eX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="chf-xq-hRA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-962.31884057971024" y="-2192.4107142857142"/>
+        </scene>
+        <!--Trip Way Points View Controller-->
+        <scene sceneID="NLq-NL-jZd">
+            <objects>
+                <viewController storyboardIdentifier="tripVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G5B-dw-3l7" customClass="TripWayPointsViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aWd-5M-hWm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You title for your planned trip" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yzr-HZ-DHe">
+                                <rect key="frame" x="70" y="120" width="274" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="65w-mH-9dV">
+                                <rect key="frame" x="137" y="211" width="140" height="30"/>
+                                <state key="normal" title="Add more waypoints"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wVW-xv-eh3">
+                                <rect key="frame" x="0.0" y="263" width="414" height="599"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Y2x-y0-ICE" firstAttribute="bottom" secondItem="wVW-xv-eh3" secondAttribute="bottom" id="4PB-6G-jku"/>
+                            <constraint firstItem="yzr-HZ-DHe" firstAttribute="top" secondItem="Y2x-y0-ICE" secondAttribute="top" constant="76" id="FqZ-Us-q5b"/>
+                            <constraint firstItem="65w-mH-9dV" firstAttribute="top" secondItem="yzr-HZ-DHe" secondAttribute="bottom" constant="33.5" id="G8c-Og-MA9"/>
+                            <constraint firstItem="yzr-HZ-DHe" firstAttribute="leading" secondItem="Y2x-y0-ICE" secondAttribute="leading" constant="70" id="McO-fB-F8h"/>
+                            <constraint firstItem="Y2x-y0-ICE" firstAttribute="trailing" secondItem="65w-mH-9dV" secondAttribute="trailing" constant="137" id="OBJ-KZ-1W5"/>
+                            <constraint firstItem="wVW-xv-eh3" firstAttribute="leading" secondItem="Y2x-y0-ICE" secondAttribute="leading" id="Sio-a4-JGZ"/>
+                            <constraint firstItem="wVW-xv-eh3" firstAttribute="top" secondItem="65w-mH-9dV" secondAttribute="bottom" constant="22" id="SuH-tp-lqW"/>
+                            <constraint firstItem="Y2x-y0-ICE" firstAttribute="trailing" secondItem="wVW-xv-eh3" secondAttribute="trailing" id="d6r-tZ-YnP"/>
+                            <constraint firstItem="Y2x-y0-ICE" firstAttribute="bottom" secondItem="wVW-xv-eh3" secondAttribute="bottom" id="l3b-nJ-zbM"/>
+                            <constraint firstItem="65w-mH-9dV" firstAttribute="leading" secondItem="Y2x-y0-ICE" secondAttribute="leading" constant="137" id="tGu-k4-eBw"/>
+                            <constraint firstItem="Y2x-y0-ICE" firstAttribute="trailing" secondItem="yzr-HZ-DHe" secondAttribute="trailing" constant="70" id="tjg-rB-mBg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y2x-y0-ICE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fwf-Wq-Sy5">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="m3V-uf-o3w"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addWayPointBTN" destination="65w-mH-9dV" id="06U-3Y-Swq"/>
+                        <outlet property="titleTripLabel" destination="yzr-HZ-DHe" id="Go9-YV-47s"/>
+                        <outlet property="wayPointTableVC" destination="wVW-xv-eh3" id="dqN-po-TsO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Crv-yQ-zrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="867" y="-2192"/>
+        </scene>
+        <!--Add Way Point View Controller-->
+        <scene sceneID="bkm-5x-lKu">
+            <objects>
+                <viewController storyboardIdentifier="addWayPointVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vlh-sM-HHS" customClass="AddWayPointViewController" customModule="TripPlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="o68-kU-iUY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="hhX-s8-YkH"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="ntB-92-d4q" id="ZmO-Dy-NvB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yno-vo-rvw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="ntB-92-d4q">
+                    <connections>
+                        <outlet property="delegate" destination="vlh-sM-HHS" id="ICd-K0-Am7"/>
+                        <outlet property="searchContentsController" destination="vlh-sM-HHS" id="gsd-24-9ZV"/>
+                        <outlet property="searchResultsDataSource" destination="vlh-sM-HHS" id="wH9-ny-KVV"/>
+                        <outlet property="searchResultsDelegate" destination="vlh-sM-HHS" id="RJF-JX-S7e"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1826" y="-2192"/>
+        </scene>
+    </scenes>
+</document>
